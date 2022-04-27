@@ -1,1 +1,7 @@
-App works !!! <router-outlet></router-outlet>
+<div [attr.data-theme-type]="themeType" class="main background-primary">
+  App works !!! <router-outlet></router-outlet>
+  <h1 class="text color-secondary">H1 test</h1>
+  <button (click)="onBtnClick()" class="btn background-primary color-secondary">
+    change
+  </button>
+</div>

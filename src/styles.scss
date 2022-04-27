@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/scss/theme.scss";
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+.background-primary {
+  background-color: var(--color-primary);
+}
+
+.background-secondary {
+  background-color: var(--color-secondary);
 }

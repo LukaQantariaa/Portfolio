@@ -1,0 +1,15 @@
+:root {
+  --size: 1rem;
+  --color-primary: #00ff00;
+  --color-secondary: #ff00ff;
+}
+
+[data-theme-type="light"] {
+  --color-primary: #e3e3e3;
+  --color-secondary: #000000;
+}
+
+[data-theme-type="dark"] {
+  --color-primary: #363636;
+  --color-secondary: #ffffff;
+}

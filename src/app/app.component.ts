@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public title = 'test title';
+  public themeType: string = 'light';
+
   ngOnInit(): void {}
+
+  public onBtnClick() {
+    this.themeType == 'light'
+      ? (this.themeType = 'dark')
+      : (this.themeType = 'light');
+  }
 }
