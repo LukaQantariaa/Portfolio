@@ -1,7 +1,20 @@
-<div [attr.data-theme-type]="themeType" class="main background-primary">
-  App works !!! <router-outlet></router-outlet>
-  <h1 class="text color-secondary">H1 test</h1>
-  <button (click)="onBtnClick()" class="btn background-primary color-secondary">
-    change
-  </button>
+<div
+  [attr.data-theme-type]="themeType"
+  class="main background-primary w-100 d-flex flex-row justify-content-start align-items-start position-relative"
+>
+  <div class="navbar-wrapper position-fixed">
+    <app-navbar></app-navbar>
+  </div>
+  <main class="w-100 d-flex flex-row justify-content-center align-items-center">
+    <div class="container">
+      <router-outlet></router-outlet>
+      <h1 class="text color-secondary">H1 test</h1>
+      <button
+        (click)="onBtnClick()"
+        class="btn background-primary color-secondary"
+      >
+        change
+      </button>
+    </div>
+  </main>
 </div>

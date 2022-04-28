@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/scss/theme.scss";
+@import "assets/scss/grid.scss";
+
+$duration: 0.3s;
 
 * {
   box-sizing: border-box;
@@ -9,16 +12,34 @@
 
 .color-primary {
   color: var(--color-primary);
+  transition-duration: $duration;
 }
 
 .color-secondary {
   color: var(--color-secondary);
+  transition-duration: $duration;
 }
 
 .background-primary {
   background-color: var(--color-primary);
+  transition-duration: $duration;
 }
 
 .background-secondary {
   background-color: var(--color-secondary);
+  transition-duration: $duration;
+}
+
+.fill-primary {
+  * {
+    fill: var(--color-primary);
+  }
+  transition-duration: $duration;
+}
+
+.fill-secondary {
+  * {
+    fill: var(--color-secondary);
+  }
+  transition-duration: $duration;
 }
