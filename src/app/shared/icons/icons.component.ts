@@ -2,7 +2,10 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  EventEmitter,
+  HostListener,
   Input,
+  Output,
 } from '@angular/core';
 import { IconService } from 'src/app/services/icon.service';
 
@@ -15,6 +18,8 @@ import { IconService } from 'src/app/services/icon.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconsComponent {
+  @Output() onClick = new EventEmitter<any>();
+
   @Input()
   set name(iconName: string) {
     this.element.nativeElement.innerHTML =
@@ -30,6 +35,16 @@ export class IconsComponent {
   set width(width: number) {
     this.element.nativeElement.children[0].style.width = width;
     this.element.nativeElement.children[0].style.height = width;
+  }
+
+  @Input()
+  set cursor(cursor: string) {
+    this.element.nativeElement.style.cursor = cursor;
+  }
+
+  @HostListener('click', ['$event'])
+  click(e: any) {
+    this.onClick.next();
   }
 
   constructor(private element: ElementRef, private iconService: IconService) {}

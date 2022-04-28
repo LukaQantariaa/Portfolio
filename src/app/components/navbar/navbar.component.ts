@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   OnInit,
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   private maximizedWidth: number = 200;
   public logoWidth: number = 0;
 
-  constructor() {}
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
@@ -31,6 +32,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   private setDefaultWidth(): void {
     this.navbar.nativeElement.style.width = `${this.defaultWidth}px`;
     this.logoWidth = this.defaultWidth - 20;
+    this.cd.detectChanges();
   }
 
   public onMouseOver(): void {
@@ -40,5 +42,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   public onMouseout(): void {
     this.setDefaultWidth();
+  }
+
+  public zoomInLogo(): void {
+    console.log('ZOOM IN!');
   }
 }

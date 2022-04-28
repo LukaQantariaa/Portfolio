@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/scss/theme.scss";
 @import "assets/scss/grid.scss";
+@import "assets/scss/fonts.scss";
 
 $duration: 0.3s;
 
@@ -8,6 +9,7 @@ $duration: 0.3s;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "primary";
 }
 
 .color-primary {
