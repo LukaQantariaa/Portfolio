@@ -6,10 +6,18 @@
 }
 
 main {
-  margin-left: 80px;
+  margin-left: 100px;
 }
 
 .navbar-wrapper {
   width: fit-content;
   height: 100vh;
+}
+
+.loading-wrapper {
+  transition-duration: 1s;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: black;
 }

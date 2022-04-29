@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   @ViewChild('navbar', { static: true })
   navbar!: ElementRef;
 
-  private defaultWidth: number = 80;
+  private defaultWidth: number = 100;
   private maximizedWidth: number = 200;
   public logoWidth: number = 0;
 

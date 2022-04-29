@@ -6,10 +6,24 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IconsModule } from './shared/icons/icons.module';
+import { LoadingComponent } from './components/loading/loading.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, IconsModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    LoadingComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    IconsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

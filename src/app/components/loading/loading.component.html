@@ -1,0 +1,14 @@
+<div
+  class="loading d-flex flex-column justify-content-center align-items-center"
+>
+  <div #qr class="qr-code-wrapper">
+    <app-icons
+      [name]="'qr'"
+      className="fill-white"
+      [width]="100"
+      cursor="progress"
+    ></app-icons>
+  </div>
+
+  <div class="timer color-white">{{ percent }}%</div>
+</div>
