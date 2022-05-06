@@ -1,4 +1,12 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { timer } from 'rxjs';
 
 @Component({
@@ -11,6 +19,8 @@ export class LoadingComponent implements OnInit {
   public duration!: number;
 
   @ViewChild('qr', { static: true }) qrEl!: ElementRef;
+
+  @Output() onFinish = new EventEmitter<any>();
 
   public percent: number = 0;
   private maxBlur: number = 5;
@@ -26,6 +36,7 @@ export class LoadingComponent implements OnInit {
       this.percent += 1;
       this.blur();
       if (this.percent == 100) {
+        this.onFinish.next();
         clearInterval(interval);
       }
     }, this.duration * 10);

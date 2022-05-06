@@ -48,16 +48,8 @@ export class AppComponent implements OnInit {
   private getFeatureFlagConfig(): void {
     this.configService.getConfig().subscribe((data) => {
       this.featureFlagsConfig = data;
-      if (data.loadingPage.visible)
-        this.startLoadingTimer(data.loadingPage.duration);
+      this.showLoadingPage = data.loadingPage.visible;
     });
-  }
-
-  private startLoadingTimer(seconds: number): void {
-    this.showLoadingPage = true;
-    setTimeout(() => {
-      this.showLoadingPage = false;
-    }, seconds * 1000);
   }
 
   public onBtnClick() {

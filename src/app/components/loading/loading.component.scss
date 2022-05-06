@@ -10,10 +10,28 @@
   height: 100%;
 }
 
+.background-image-1 {
+  position: fixed;
+  opacity: 0.02;
+  transform: translate(-50%, -50%) rotate(20deg);
+  bottom: -83%;
+  right: -47%;
+  transition-duration: 0.5s;
+}
+
+.background-image-1:hover {
+  opacity: 0.05;
+}
+
+.qr-code-wrapper:hover {
+  transform: scale(1.05);
+}
+
 .qr-code-wrapper {
   animation-name: qr-animation;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
+  transition-duration: 0.3s;
 }
 
 .timer {

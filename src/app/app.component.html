@@ -25,6 +25,7 @@
   >
     <app-loading
       [duration]="featureFlagsConfig.loadingPage.duration"
+      (onFinish)="showLoadingPage = false"
     ></app-loading>
   </div>
 </div>
