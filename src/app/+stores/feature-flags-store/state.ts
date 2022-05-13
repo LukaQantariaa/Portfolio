@@ -52,7 +52,7 @@ export const initialState: FeatureFlagsState = {
     },
     pages: {
       home: {
-        visible: false,
+        visible: true,
       },
     },
   },
