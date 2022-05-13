@@ -40,26 +40,48 @@
   animation-timing-function: ease-out;
 }
 
-@keyframes qr-animation {
+.theme-type {
+  font-size: 0.75rem;
+  color: white;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: 5%;
+  animation: opacity-animation 1s infinite;
+}
+
+@keyframes opacity-animation {
   0% {
-    opacity: 0;
-    transform: translateY(-50px);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+  }
+}
+
+@keyframes qr-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-3.125rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
   }
 }
 
 @keyframes percent-animation {
   0% {
     opacity: 0;
-    transform: translateY(50px);
-    filter: blur(3px);
+    transform: translateY(3.125rem);
+    filter: blur(0.188rem);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
-    filter: blur(0px);
+    transform: translateY(0rem);
+    filter: blur(0rem);
   }
 }

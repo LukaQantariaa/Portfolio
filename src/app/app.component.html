@@ -1,23 +1,57 @@
 <div
   *ngIf="featureFlagsConfig"
   [attr.data-theme-type]="themeType"
-  class="main background-primary-1 w-100 d-flex flex-row justify-content-start align-items-start position-relative"
+  class="main-wrapper background-color-bg w-100 d-flex flex-column justify-content-start align-items-center"
 >
-  <div class="navbar-wrapper position-fixed">
-    <app-navbar></app-navbar>
+  <!-- Fixed contents -->
+  <div
+    *ngIf="featureFlagsConfig.scrollDown.visible"
+    class="scroll-down-wrapper user-select-none d-flex flex-column justify-content-center align-items-center"
+  >
+    <div class="scroll-text color-text-offset">Scroll Down</div>
+    <div class="scroll-line d-flex flex-column"></div>
   </div>
-  <main class="w-100 d-flex flex-row justify-content-center align-items-center">
-    <div class="container">
-      <router-outlet></router-outlet>
-      <h1 class="text color-primary-2">H1 test</h1>
-      <button
-        (click)="onBtnClick()"
-        class="btn background-primary-1 color-primary-2"
-      >
-        change
-      </button>
+  <!-- ! end of fixed contents -->
+  <div
+    [ngClass]="{ 'show-themes': showThemes }"
+    class="themes-wrapper w-100 position-relative d-flex flex-row justify-content-center align-items-center"
+  >
+    <app-theme [themeList]="themeList"></app-theme>
+  </div>
+  <div
+    [style.animation-name]="
+      featureFlagsConfig.loadingPage.visible ? 'blurAnimation' : 'none'
+    "
+    [style.animation-delay]="
+      featureFlagsConfig.loadingPage.visible
+        ? featureFlagsConfig.loadingPage.duration + 's'
+        : '0s'
+    "
+    class="main background-color-bg w-100 d-flex flex-row justify-content-start align-items-start position-relative"
+  >
+    <div class="navbar-wrapper position-absolute">
+      <app-navbar></app-navbar>
     </div>
-  </main>
+    <main
+      class="w-100 d-flex flex-row justify-content-center align-items-center"
+    >
+      <div
+        (click)="toogleThemes()"
+        class="settings-icon-wrapper background-color-bg-offset d-flex flex-column justify-content-center align-items-center position-relative"
+      >
+        <app-icons
+          [name]="'settings'"
+          className="fill-color-text"
+          [width]="20"
+          cursor="pointer"
+        ></app-icons>
+      </div>
+      <div class="container">
+        <!-- Actual content -->
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
   <div
     *ngIf="featureFlagsConfig.loadingPage.visible && showLoadingPage"
     [@enterAnimation]

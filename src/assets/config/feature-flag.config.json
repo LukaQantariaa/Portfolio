@@ -1,6 +1,64 @@
 {
   "loadingPage": {
     "visible": true,
-    "duration": 2
+    "duration": 3
+  },
+  "scrollDown": {
+    "visible": true
+  },
+  "themes": {
+    "allowed": true,
+    "list": [
+      {
+        "name": "Light",
+        "allowed": true,
+        "colors": {
+          "colorBg": "#ffffff",
+          "colorBgOffset": "#f7f7f9",
+          "colorText": "#373a3c",
+          "colorTextOffset": "#818a91",
+          "colorBorder": "#eceeef",
+          "colorPrimary": "#ff335f",
+          "colorPrimaryOffset": "#ff1447",
+          "colorSecondary": "#43a9a3"
+        },
+        "backgroundColor": "#ffffff"
+      },
+      {
+        "name": "Dark",
+        "allowed": true,
+        "colors": {
+          "colorBg": "#0e141b",
+          "colorBgOffset": "#252526",
+          "colorText": "#ffffff",
+          "colorTextOffset": "#818a91",
+          "colorBorder": "#2d2d2d",
+          "colorPrimary": "#ff5277",
+          "colorPrimaryOffset": "#ff2957",
+          "colorSecondary": "#43a9a3"
+        },
+        "backgroundColor": "#0e141b"
+      },
+      {
+        "name": "Chocolate",
+        "allowed": true,
+        "colors": {
+          "colorBg": "#55423d",
+          "colorBgOffset": "#41312e",
+          "colorText": "#fffffe",
+          "colorTextOffset": "#ffc0ad",
+          "colorBorder": "#271c19",
+          "colorPrimary": "#f3ab87",
+          "colorPrimaryOffset": "#ffc0ad",
+          "colorSecondary": "#e78fb3"
+        },
+        "backgroundColor": "#55423d"
+      }
+    ]
+  },
+  "pages": {
+    "home": {
+      "visible": true
+    }
   }
 }

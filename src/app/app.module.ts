@@ -9,6 +9,8 @@ import { IconsModule } from './shared/icons/icons.module';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeComponent } from './components/theme/theme.component';
+import { RootStoreModule } from './+stores/root-store.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     FooterComponent,
     LoadingComponent,
+    ThemeComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IconsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    RootStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

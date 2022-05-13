@@ -3,11 +3,16 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnDestroy,
   OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
-import { timer } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Observable, Subject } from 'rxjs';
+import { activeTheme } from 'src/app/+stores/tabs-store/selectors';
+import { TabsState } from 'src/app/+stores/tabs-store/state';
+import { ThemeTypes } from 'src/app/interfaces/theme.interface';
 
 @Component({
   selector: 'app-loading',
@@ -25,10 +30,13 @@ export class LoadingComponent implements OnInit {
   public percent: number = 0;
   private maxBlur: number = 5;
 
-  constructor() {}
+  public themeName$!: Observable<ThemeTypes>;
+
+  constructor(private store: Store<TabsState>) {}
 
   ngOnInit(): void {
     this.startTimer();
+    this.themeName$ = this.store.select(activeTheme);
   }
 
   private startTimer(): void {

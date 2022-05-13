@@ -1,11 +1,11 @@
 <div
   class="loading user-select-none d-flex flex-column justify-content-center align-items-center"
 >
-  <div
+  <!-- <div
     class="background-image-1 d-flex flex-column justify-content-center align-items-center"
   >
     <app-icons [name]="'qr'" className="fill-white" [width]="700"></app-icons>
-  </div>
+  </div> -->
 
   <div #qr class="qr-code-wrapper">
     <app-icons
@@ -17,4 +17,10 @@
   </div>
 
   <div class="timer color-white">{{ percent }}%</div>
+
+  <div
+    class="theme-type d-flex flex-column justify-content-center align-items-center"
+  >
+    Theme: {{ themeName$ | async }}
+  </div>
 </div>

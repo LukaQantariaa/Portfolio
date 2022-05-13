@@ -12,12 +12,12 @@ $duration: 0.3s;
   font-family: "primary";
 }
 
-.color-white {
-  color: white;
-}
-
 .user-select-none {
   user-select: none !important;
+}
+
+.color-white {
+  color: white;
 }
 
 .fill-white {
@@ -27,36 +27,142 @@ $duration: 0.3s;
   transition-duration: $duration;
 }
 
-.color-primary-1 {
-  color: var(--color-primary-1);
+.color-bg {
+  color: var(--color-bg);
   transition-duration: $duration;
 }
 
-.color-primary-2 {
-  color: var(--color-primary-2);
+.color-bg-offset {
+  color: var(--color-bg-offset);
   transition-duration: $duration;
 }
 
-.background-primary-1 {
-  background-color: var(--color-primary-1);
+.color-text {
+  color: var(--color-text);
   transition-duration: $duration;
 }
 
-.background-primary-2 {
-  background-color: var(--color-primary-2);
+.color-text-offset {
+  color: var(--color-text-offset);
   transition-duration: $duration;
 }
 
-.fill-primary-1 {
+.color-border {
+  color: var(--color-border);
+  transition-duration: $duration;
+}
+
+.color-primary {
+  color: var(--color-primary);
+  transition-duration: $duration;
+}
+
+.color-primary-offset {
+  color: var(--color-primary-offset);
+  transition-duration: $duration;
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+  transition-duration: $duration;
+}
+
+// ##
+
+.background-color-bg {
+  background-color: var(--color-bg);
+  transition-duration: $duration;
+}
+
+.background-color-bg-offset {
+  background-color: var(--color-bg-offset);
+  transition-duration: $duration;
+}
+
+.background-color-text {
+  background-color: var(--color-text-offset);
+  transition-duration: $duration;
+}
+
+.background-color-text-offset {
+  background-color: var(--color-text-offse);
+  transition-duration: $duration;
+}
+
+.background-color-border {
+  background-color: var(--color-border);
+  transition-duration: $duration;
+}
+
+.background-color-primary {
+  background-color: var(--color-primary);
+  transition-duration: $duration;
+}
+
+.background-color-primary-offset {
+  background-color: var(--color-primary-offset);
+  transition-duration: $duration;
+}
+
+.background-color-secondary {
+  background-color: var(--color-secondary);
+  transition-duration: $duration;
+}
+
+// ##
+
+.fill-color-bg {
   * {
-    fill: var(--color-primary-1);
+    fill: var(--color-bg);
   }
   transition-duration: $duration;
 }
 
-.fill-primary-2 {
+.fill-color-bg-offset {
   * {
-    fill: var(--color-primary-2);
+    fill: var(--color-bg-offset);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-text {
+  * {
+    fill: var(--color-text);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-text-offset {
+  * {
+    fill: var(--color-text-offset);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-border {
+  * {
+    fill: var(--color-border);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-primary {
+  * {
+    fill: var(--color-primary);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-primary-offset {
+  * {
+    fill: var(--color-primary-offset);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-secondary {
+  * {
+    fill: var(--color-secondary);
   }
   transition-duration: $duration;
 }
