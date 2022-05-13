@@ -1,0 +1,59 @@
+<div
+  *ngIf="themeList"
+  class="themes-container background-color-bg-offset w-100 position-relative d-flex flex-column justify-content-center align-items-center"
+>
+  <p class="color-text header-text">Select theme:</p>
+  <ul class="themes-list-wrapper w-100 d-flex flex-row align-items-center">
+    <ng-container *ngFor="let theme of themeList">
+      <li
+        *ngIf="theme.allowed"
+        class="theme-box d-flex flex-row"
+        [ngClass]="{ active: activeTheme === theme.name }"
+        (click)="selectTheme(theme.name)"
+      >
+        <button
+          [ngStyle]="{ 'background-color': theme.colors.colorBg }"
+          class="box d-flex flex-column justify-content-center align-items-center"
+        >
+          <p class="theme-name" [ngStyle]="{ color: theme.colors.colorText }">
+            {{ theme.name }}
+          </p>
+          <div
+            class="colors-wrapper d-flex flex-row justify-content-center align-items-center"
+          >
+            <div
+              [ngStyle]="{ 'background-color': theme.colors.colorBgOffset }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+            <div
+              [ngStyle]="{ 'background-color': theme.colors.colorText }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+            <div
+              [ngStyle]="{ 'background-color': theme.colors.colorTextOffset }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+            <div
+              [ngStyle]="{ 'background-color': theme.colors.colorBorder }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+            <div
+              [ngStyle]="{ 'background-color': theme.colors.colorPrimary }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+            <div
+              [ngStyle]="{
+                'background-color': theme.colors.colorPrimaryOffset
+              }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+            <div
+              [ngStyle]="{ 'background-color': theme.colors.colorSecondary }"
+              class="color-box d-flex flex-column justify-content-center align-items-center"
+            ></div>
+          </div>
+        </button>
+      </li>
+    </ng-container>
+  </ul>
+</div>

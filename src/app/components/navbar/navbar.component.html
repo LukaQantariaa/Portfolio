@@ -1,0 +1,14 @@
+<nav
+  class="background-color-bg-offset color-text"
+  (mouseover)="onMouseOver()"
+  (mouseout)="onMouseout()"
+  #navbar
+>
+  <app-icons
+    [name]="'qr'"
+    className="fill-color-text"
+    [width]="logoWidth"
+    cursor="zoom-in"
+    (onClick)="zoomInLogo()"
+  ></app-icons>
+</nav>

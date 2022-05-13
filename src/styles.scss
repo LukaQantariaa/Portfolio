@@ -1,24 +1,168 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/scss/theme.scss";
+@import "assets/scss/grid.scss";
+@import "assets/scss/fonts.scss";
+
+$duration: 0.3s;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "primary";
+}
+
+.user-select-none {
+  user-select: none !important;
+}
+
+.color-white {
+  color: white;
+}
+
+.fill-white {
+  * {
+    fill: white;
+  }
+  transition-duration: $duration;
+}
+
+.color-bg {
+  color: var(--color-bg);
+  transition-duration: $duration;
+}
+
+.color-bg-offset {
+  color: var(--color-bg-offset);
+  transition-duration: $duration;
+}
+
+.color-text {
+  color: var(--color-text);
+  transition-duration: $duration;
+}
+
+.color-text-offset {
+  color: var(--color-text-offset);
+  transition-duration: $duration;
+}
+
+.color-border {
+  color: var(--color-border);
+  transition-duration: $duration;
 }
 
 .color-primary {
   color: var(--color-primary);
+  transition-duration: $duration;
+}
+
+.color-primary-offset {
+  color: var(--color-primary-offset);
+  transition-duration: $duration;
 }
 
 .color-secondary {
   color: var(--color-secondary);
+  transition-duration: $duration;
 }
 
-.background-primary {
+// ##
+
+.background-color-bg {
+  background-color: var(--color-bg);
+  transition-duration: $duration;
+}
+
+.background-color-bg-offset {
+  background-color: var(--color-bg-offset);
+  transition-duration: $duration;
+}
+
+.background-color-text {
+  background-color: var(--color-text-offset);
+  transition-duration: $duration;
+}
+
+.background-color-text-offset {
+  background-color: var(--color-text-offse);
+  transition-duration: $duration;
+}
+
+.background-color-border {
+  background-color: var(--color-border);
+  transition-duration: $duration;
+}
+
+.background-color-primary {
   background-color: var(--color-primary);
+  transition-duration: $duration;
 }
 
-.background-secondary {
+.background-color-primary-offset {
+  background-color: var(--color-primary-offset);
+  transition-duration: $duration;
+}
+
+.background-color-secondary {
   background-color: var(--color-secondary);
+  transition-duration: $duration;
+}
+
+// ##
+
+.fill-color-bg {
+  * {
+    fill: var(--color-bg);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-bg-offset {
+  * {
+    fill: var(--color-bg-offset);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-text {
+  * {
+    fill: var(--color-text);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-text-offset {
+  * {
+    fill: var(--color-text-offset);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-border {
+  * {
+    fill: var(--color-border);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-primary {
+  * {
+    fill: var(--color-primary);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-primary-offset {
+  * {
+    fill: var(--color-primary-offset);
+  }
+  transition-duration: $duration;
+}
+
+.fill-color-secondary {
+  * {
+    fill: var(--color-secondary);
+  }
+  transition-duration: $duration;
 }
