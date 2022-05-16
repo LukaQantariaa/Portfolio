@@ -11,3 +11,10 @@ export const activeTheme = createSelector(
     return state.activeTheme;
   }
 );
+
+export const animationIsCompleted = createSelector(
+  selectTabsFeature,
+  (state: TabsState) => {
+    return state.animationCompleted;
+  }
+);

@@ -10,3 +10,7 @@ export const setActiveTheme = createAction(
   '[SAVE] Save Active Theme',
   props<{ theme: ThemeTypes }>()
 );
+
+export const animationIsCompleted = createAction(
+  '[SAVE] Animation is completed'
+);

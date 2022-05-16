@@ -11,6 +11,7 @@ import {
 import { FeatureFlagsState } from './+stores/feature-flags-store/state';
 import { AppState } from './+stores/root.state';
 import {
+  animationIsCompleted,
   changeActiveTheme,
   setActiveTheme,
 } from './+stores/tabs-store/actions';
@@ -114,6 +115,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public toogleThemes(): void {
     this.showThemes = !this.showThemes;
+  }
+
+  public onAnimationFinish(): void {
+    this.showLoadingPage = false;
+    this.store.dispatch(animationIsCompleted());
   }
 
   ngOnDestroy(): void {
