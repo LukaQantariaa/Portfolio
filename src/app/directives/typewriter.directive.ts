@@ -71,7 +71,11 @@ export class TypewriterDirective implements OnInit {
   }
 
   private createNewSpan(color: string): void {
+    if (this.spanEl) {
+      this.renderer.removeClass(this.spanEl, 'active-cursor');
+    }
     this.spanEl = this.renderer.createElement('span');
+    this.renderer.addClass(this.spanEl, 'active-cursor');
     this.renderer.setStyle(this.spanEl, 'color', color);
     this.renderer.setStyle(this.spanEl, 'min-height', `${this.minHeight}px`);
     this.renderer.setStyle(

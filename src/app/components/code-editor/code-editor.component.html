@@ -3,9 +3,7 @@
     class="code-editor-wrapper d-flex flex-column justify-content-start align-items-start"
   >
     <!-- Tabs -->
-    <div
-      class="code-tabs-wrapper w-100 d-flex flex-row justify-content-start align-items-center"
-    >
+    <div class="code-tabs-wrapper w-100 d-flex flex-row align-items-center">
       <div
         class="code-tabs d-flex flex-row justify-content-start align-items-center"
       >
@@ -23,6 +21,16 @@
         class="file-name d-flex flex-column justify-content-center align-items-center"
       >
         {{ fileName }}
+      </div>
+      <div
+        class="settings-btn d-flex flex-column justify-content-center align-items-center"
+      >
+        <app-icons
+          [name]="'settings'"
+          className="fill-white"
+          [width]="18"
+          cursor="pointer"
+        ></app-icons>
       </div>
     </div>
     <!-- Code -->

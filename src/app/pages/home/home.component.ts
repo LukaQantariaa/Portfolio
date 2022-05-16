@@ -22,19 +22,20 @@ export class HomeComponent implements OnInit {
   public codeEditorVisibility$!: Observable<boolean>;
 
   constructor(
-    private store: Store<AppState>,
     private tabsStore: Store<TabsState>,
     private featureFlagsStore: Store<FeatureFlagsState>,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.codeEditorVisibility$ = this.store.select(selectCodeEditorVisibility);
+    this.codeEditorVisibility$ = this.featureFlagsStore.select(
+      selectCodeEditorVisibility
+    );
     this.animationIsCompleted$ = this.tabsStore.select(selectAnimationState);
   }
 
   private getPageVisibility(pageName: string): void {
-    this.store
+    this.featureFlagsStore
       .select(selectPageVisibility(pageName))
       .pipe(
         filter((res) => res != null),
