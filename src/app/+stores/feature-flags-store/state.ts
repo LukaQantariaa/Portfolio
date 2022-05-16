@@ -10,6 +10,9 @@ export interface FeatureFlagsState {
     scrollDown: {
       visible: boolean;
     };
+    codeEditor: {
+      visible: boolean;
+    };
     themes: {
       allowed: boolean;
       list: Array<{
@@ -44,6 +47,9 @@ export const initialState: FeatureFlagsState = {
       duration: 0,
     },
     scrollDown: {
+      visible: false,
+    },
+    codeEditor: {
       visible: false,
     },
     themes: {

@@ -22,10 +22,10 @@ import { RootStoreModule } from './+stores/root-store.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     IconsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     RootStoreModule,
   ],
   providers: [],

@@ -22,3 +22,10 @@ export const selectThemeVisibility = (themeName: ThemeTypes) =>
     console.log(state);
     return theme ? theme.allowed : null;
   });
+
+export const selectCodeEditorVisibility = createSelector(
+  selectFeatureFlagsState,
+  (state: FeatureFlagsState) => {
+    return state.data.codeEditor.visible;
+  }
+);
