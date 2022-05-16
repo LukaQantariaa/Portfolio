@@ -3,9 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
-import { selectPageVisibility } from 'src/app/+stores/feature-flags-store/selectors';
+import {
+  selectCodeEditorVisibility,
+  selectPageVisibility,
+} from 'src/app/+stores/feature-flags-store/selectors';
+import { FeatureFlagsState } from 'src/app/+stores/feature-flags-store/state';
 import { AppState } from 'src/app/+stores/root.state';
-import { animationIsCompleted } from 'src/app/+stores/tabs-store/selectors';
+import { selectAnimationState } from 'src/app/+stores/tabs-store/selectors';
 import { TabsState } from 'src/app/+stores/tabs-store/state';
 
 @Component({
@@ -15,15 +19,18 @@ import { TabsState } from 'src/app/+stores/tabs-store/state';
 })
 export class HomeComponent implements OnInit {
   public animationIsCompleted$!: Observable<boolean>;
+  public codeEditorVisibility$!: Observable<boolean>;
 
   constructor(
     private store: Store<AppState>,
     private tabsStore: Store<TabsState>,
+    private featureFlagsStore: Store<FeatureFlagsState>,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.animationIsCompleted$ = this.tabsStore.select(animationIsCompleted);
+    this.codeEditorVisibility$ = this.store.select(selectCodeEditorVisibility);
+    this.animationIsCompleted$ = this.tabsStore.select(selectAnimationState);
   }
 
   private getPageVisibility(pageName: string): void {

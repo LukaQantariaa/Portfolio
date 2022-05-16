@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
-import { activeTheme } from 'src/app/+stores/tabs-store/selectors';
+import { selectActiveTheme } from 'src/app/+stores/tabs-store/selectors';
 import { TabsState } from 'src/app/+stores/tabs-store/state';
 import { ThemeTypes } from 'src/app/interfaces/theme.interface';
 
@@ -36,7 +36,7 @@ export class LoadingComponent implements OnInit {
 
   ngOnInit(): void {
     this.startTimer();
-    this.themeName$ = this.store.select(activeTheme);
+    this.themeName$ = this.store.select(selectActiveTheme);
   }
 
   private startTimer(): void {

@@ -1,49 +1,51 @@
-<div
-  class="code-editor-wrapper d-flex flex-column justify-content-start align-items-start"
->
-  <!-- Tabs -->
+<div class="code-editot-container">
   <div
-    class="code-tabs-wrapper w-100 d-flex flex-row justify-content-start align-items-center"
+    class="code-editor-wrapper d-flex flex-column justify-content-start align-items-start"
   >
+    <!-- Tabs -->
     <div
-      class="code-tabs d-flex flex-row justify-content-start align-items-center"
+      class="code-tabs-wrapper w-100 d-flex flex-row justify-content-start align-items-center"
     >
       <div
-        class="tab-button close d-flex flex-column justify-content-center align-items-center"
-      ></div>
+        class="code-tabs d-flex flex-row justify-content-start align-items-center"
+      >
+        <div
+          class="tab-button close d-flex flex-column justify-content-center align-items-center"
+        ></div>
+        <div
+          class="tab-button minimize d-flex flex-column justify-content-center align-items-center"
+        ></div>
+        <div
+          class="tab-button maximize d-flex flex-column justify-content-center align-items-center"
+        ></div>
+      </div>
       <div
-        class="tab-button minimize d-flex flex-column justify-content-center align-items-center"
-      ></div>
-      <div
-        class="tab-button maximize d-flex flex-column justify-content-center align-items-center"
-      ></div>
+        class="file-name d-flex flex-column justify-content-center align-items-center"
+      >
+        {{ fileName }}
+      </div>
     </div>
+    <!-- Code -->
     <div
-      class="file-name d-flex flex-column justify-content-center align-items-center"
+      class="code-editor-container w-100 d-flex flex-row justify-content-start align-items-start"
     >
-      {{ fileName }}
+      <div
+        *ngIf="typeWriterConfig"
+        class="lines-conunt d-flex flex-column justify-content-start align-items-center"
+      >
+        <ng-container *ngFor="let line of typeWriterConfig.content; index as i">
+          <p class="line-count">{{ i + 1 }}</p>
+        </ng-container>
+      </div>
+      <div
+        [appTypewriter]="typeWriterConfig"
+        class="code-example d-flex flex-column justify-content-start align-items-start"
+      ></div>
     </div>
   </div>
-  <!-- Code -->
   <div
-    class="code-editor-container w-100 d-flex flex-row justify-content-start align-items-start"
+    class="code-editor-footer user-select-none d-flex flex-row justify-content-end align-items-start"
   >
-    <div
-      *ngIf="typeWriterConfig"
-      class="lines-conunt d-flex flex-column justify-content-start align-items-center"
-    >
-      <ng-container *ngFor="let line of typeWriterConfig.content; index as i">
-        <p class="line-count">{{ i + 1 }}</p>
-      </ng-container>
-    </div>
-    <div
-      [appTypewriter]="typeWriterConfig"
-      class="code-example d-flex flex-column justify-content-start align-items-start"
-    ></div>
+    Designed & Built by Luka Qantaria
   </div>
-</div>
-<div
-  class="code-editor-footer user-select-none d-flex flex-row justify-content-end align-items-start"
->
-  Designed & Built by Luka Qantaria
 </div>

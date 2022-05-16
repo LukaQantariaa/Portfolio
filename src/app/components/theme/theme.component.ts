@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FeatureFlagsState } from 'src/app/+stores/feature-flags-store/state';
 import { changeActiveTheme } from 'src/app/+stores/tabs-store/actions';
-import { activeTheme } from 'src/app/+stores/tabs-store/selectors';
+import { selectActiveTheme } from 'src/app/+stores/tabs-store/selectors';
 import { TabsState } from 'src/app/+stores/tabs-store/state';
 import { ThemeTypes } from 'src/app/interfaces/theme.interface';
 
@@ -29,7 +29,7 @@ export class ThemeComponent implements OnInit, OnDestroy {
 
   private listenThemeChanges(): void {
     this.store
-      .select(activeTheme)
+      .select(selectActiveTheme)
       .pipe(takeUntil(this.unsibscrube$))
       .subscribe((theme) => {
         this.activeTheme = theme;

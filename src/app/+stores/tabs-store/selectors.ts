@@ -5,14 +5,14 @@ import { TabsState } from './state';
 export const selectTabsFeature =
   createFeatureSelector<TabsState>(TABS_STORE_KEY);
 
-export const activeTheme = createSelector(
+export const selectActiveTheme = createSelector(
   selectTabsFeature,
   (state: TabsState) => {
     return state.activeTheme;
   }
 );
 
-export const animationIsCompleted = createSelector(
+export const selectAnimationState = createSelector(
   selectTabsFeature,
   (state: TabsState) => {
     return state.animationCompleted;

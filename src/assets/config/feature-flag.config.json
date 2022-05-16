@@ -6,6 +6,9 @@
   "scrollDown": {
     "visible": true
   },
+  "codeEditor": {
+    "visible": true
+  },
   "themes": {
     "allowed": true,
     "list": [

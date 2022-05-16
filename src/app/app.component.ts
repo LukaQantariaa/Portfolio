@@ -15,7 +15,7 @@ import {
   changeActiveTheme,
   setActiveTheme,
 } from './+stores/tabs-store/actions';
-import { activeTheme } from './+stores/tabs-store/selectors';
+import { selectActiveTheme } from './+stores/tabs-store/selectors';
 import { ThemeTypes } from './interfaces/theme.interface';
 import { GeneralService } from './services/general.service';
 
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private listenThemeChanges(): void {
     this.store
-      .select(activeTheme)
+      .select(selectActiveTheme)
       .pipe(takeUntil(this.unsibscrube$))
       .subscribe((theme) => {
         this.themeType = theme;

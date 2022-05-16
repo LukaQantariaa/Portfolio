@@ -1,6 +1,6 @@
 <div class="w-100 d-flex flex-column justify-content-center align-items-center">
   <div
-    *ngIf="animationIsCompleted$ | async"
+    *ngIf="(animationIsCompleted$ | async) && (codeEditorVisibility$ | async)"
     class="app-editor d-flex flex-column justify-content-center align-items-center"
   >
     <app-code-editor></app-code-editor>
